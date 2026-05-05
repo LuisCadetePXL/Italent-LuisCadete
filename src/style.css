@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric-blue: #007bff;
+  --color-mint-green: #00ffcc;
+  --color-glass: rgba(255, 255, 255, 0.2);
+  --color-glass-border: rgba(255, 255, 255, 0.3);
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl shadow-xl;
+  }
+  
+  .nav-progress {
+    @apply h-1 bg-electric-blue transition-all duration-500 ease-in-out;
+  }
+}
+
+/* Transitions for SPA */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
